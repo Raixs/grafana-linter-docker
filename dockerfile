@@ -1,14 +1,15 @@
-# Usamos la imagen oficial de Go como base
+# We use the official Go image as a base
 FROM golang:latest
 
-# Establecemos el directorio de trabajo en el contenedor
+# We set the working directory in the container
 WORKDIR /app
 
-# Instalamos el linter de Grafana
+# We install the Grafana linter
 RUN go install github.com/grafana/dashboard-linter@latest
 
-# Añadimos el ejecutable del linter al PATH
+# We add the linter executable to the PATH
 ENV PATH="/root/go/bin:${PATH}"
 
-# Comando por defecto para ejecutar el linter
+# Default command to run the linter
 CMD ["dashboard-linter", "lint", "/app/dashboard.json"]
+

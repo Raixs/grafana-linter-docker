@@ -1,4 +1,4 @@
-# Grafana Dashboard Linter Docker
+# Grafana Dashboard Linter - Docker Container
 
 This repository contains a Dockerfile for running the Grafana Dashboard Linter in a Docker container. The Dockerfile sets up an environment using the official Go image and installs the Grafana Dashboard Linter.
 
@@ -9,8 +9,6 @@ Build the Docker image:
 `docker build -t grafana-linter .`
 
 Run the linter on a specific dashboard file:
-
-bashCopy code
 
 `docker run -v /path/to/your/dashboard.json:/app/dashboard.json grafana-linter`
 
